@@ -26,4 +26,4 @@ jobs:
           pip install requests lxml
 
       - name: Run scraping script
-        run: python your_script.py
+        run: python xiaoshuo.py
