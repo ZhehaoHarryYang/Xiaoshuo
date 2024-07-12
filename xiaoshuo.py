@@ -19,7 +19,6 @@ while True:
 
     # respond
     e = etree.HTML(resp.text)
-    print(resp.text)
     info = '\n'.join(e.xpath('//div[@class="m-post"]/p/text()'))
     title = e.xpath('//h1/text()')[0]
     url = f'https://dl.131437.xyz/{e.xpath("//tr/td[2]/a/@href")[0]}'
