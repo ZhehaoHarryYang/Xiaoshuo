@@ -7,7 +7,8 @@ from lxml import etree
 # send to which url
 url = 'https://www.tangsanbooks.com/book/15331.html'
 
-while True:
+for i in range(10):
+    i += 1
     # camouflage
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
