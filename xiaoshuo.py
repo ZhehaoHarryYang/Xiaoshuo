@@ -5,7 +5,7 @@ import requests
 from lxml import etree
 
 # send to which url
-url = 'https://dl.131437.xyz/book/douluodalu2/611.html'
+url = 'https://www.tangsanbooks.com/book/15331.html'
 
 while True:
     # camouflage
@@ -19,14 +19,14 @@ while True:
 
     # respond
     e = etree.HTML(resp.text)
-    info = '\n'.join(e.xpath('//div[@class="m-post"]/p/text()'))
+    info = '\n'.join(e.xpath('//div[@class="ui-tabs-panel"]/p/text()'))
     title = e.xpath('//h1/text()')[0]
-    url = f'https://dl.131437.xyz/{e.xpath("//tr/td[2]/a/@href")[0]}'
+    url = e.xpath("//div[@class='prenext bottom-prenext']/a/@href")[2]
     #print(info)
     print(title)
     # save data
     #with open('Douluo.txt', 'a', encoding='utf-8') as f:
     #    f.write(title + '\n\n' + info + '\n\n')
     # end of list
-    #if url == "https://dl.131437.xyz/book/douluodalu2/":
-    #   break
+    #if url == "https://www.tangsanbooks.com/xs/jueshitangmen":
+        #break
