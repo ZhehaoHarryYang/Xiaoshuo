@@ -2,7 +2,7 @@ name: Web Scraping
 
 on:
   schedule:
-    - cron: '0 * * * *' # Runs every hour. Adjust as needed.
+    - cron: '0 * * * 1' # Runs every hour. Adjust as needed.
   push:
     branches:
       - main
