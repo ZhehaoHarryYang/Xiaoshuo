@@ -3,9 +3,11 @@
 import requests
 # pip install lxml
 from lxml import etree
+import re  # Import regular expressions for whitespace cleanup
+
 
 # send to which url
-url = 'https://www.tangsanbooks.com/book/15331.html'
+url = 'https://www.tangsanbooks.com/book/15333.html'
 
 for i in range(10):
     i += 1
@@ -20,7 +22,12 @@ for i in range(10):
 
     # respond
     e = etree.HTML(resp.text)
-    info = '\n'.join(e.xpath('//div[@class="ui-tabs-panel"]/p/text()'))
+
+    info = '\n'.join(e.xpath('//div[@class="ui-tabs-panel"]/text()')).strip()
+    # Normalize whitespace (eliminate 2 or more consecutive newlines)
+
+    info = re.sub(r'\n{2,}', '\n', info)
+
     title = e.xpath('//h1/text()')[0]
     url = e.xpath("//div[@class='prenext bottom-prenext']/a/@href")[2]
     #print(info)
