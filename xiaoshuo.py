@@ -24,7 +24,7 @@ for i in range(10):
     title = e.xpath('//h1/text()')[0]
     url = e.xpath("//div[@class='prenext bottom-prenext']/a/@href")[2]
     #print(info)
-    print(title)
+    print(title, info)
     # save data
     #with open('Douluo.txt', 'a', encoding='utf-8') as f:
     #    f.write(title + '\n\n' + info + '\n\n')
